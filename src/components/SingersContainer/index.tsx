@@ -1,9 +1,10 @@
 import React from 'react';
+import { SingerDTO } from '../../types/SingerDTO';
 import styles from './SongContainer.module.scss';
 
 type props = {
-	singers: any[];
-	setCurrentSinger: (s: string) => void;
+	singers: SingerDTO[];
+	setCurrentSinger: (s: SingerDTO) => void;
 };
 
 function SingersContainer({ singers, setCurrentSinger }: props) {

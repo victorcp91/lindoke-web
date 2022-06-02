@@ -12,6 +12,7 @@ import SingersContainer from '../SingersContainer';
 import SingerSections from '../SingerSections';
 import Songs from '../Songs';
 import { QueueSongDTO } from '../../types/RoomDTO';
+import { SingerDTO } from '../../types/SingerDTO';
 
 type props = {
 	active: boolean;
@@ -53,10 +54,14 @@ function SongBook({ active }: props) {
 
 	const filteredSingers = useMemo(() => {
 		if (foundSingers.length) {
-			return foundSingers;
+			return foundSingers.sort((a: SingerDTO, b: SingerDTO) =>
+				a.name > b.name ? 1 : -1
+			);
 		}
 		if (currentSection) {
-			return songBook.filter((a: any) => a.index === currentSection);
+			return songBook
+				.filter((a: SingerDTO) => a.index === currentSection)
+				.sort((a, b) => (a.name > b.name ? 1 : -1));
 		}
 		return [];
 	}, [searchQuery, songBook, currentSection, foundSingers]);

@@ -41,6 +41,7 @@ function Songs({ singer, addToSingQueue }: props) {
 			<ul>
 				{singer.songs
 					.filter((s) => s?.title && s?.youtubeId)
+					.sort((a, b) => (a.title > b.title ? 1 : -1))
 					.map((s) => (
 						<li key={s.youtubeId}>
 							<button
