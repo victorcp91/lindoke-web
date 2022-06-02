@@ -2,8 +2,8 @@
 const nextConfig = {
 	reactStrictMode: false,
 	env: {
-		apiUrl: 'https://lindoke-api.herokuapp.com/',
-		appUrl: 'https://lindoke-web.herokuapp.com/',
+		apiUrl: 'https://lindoke-api.herokuapp.com',
+		appUrl: 'https://lindoke-web.herokuapp.com',
 	},
 	webpack(config) {
 		config.module.rules.push({
