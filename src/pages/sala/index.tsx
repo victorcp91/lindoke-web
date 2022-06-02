@@ -4,6 +4,7 @@ import Link from 'next/link';
 import axios from 'axios';
 
 import LindokeLogo from '../../assets/lindoke.svg';
+import Particles from '../../components/Particles';
 
 import styles from './Entrada.module.scss';
 
@@ -47,25 +48,28 @@ function Entrada() {
 	}, [roomCode]);
 
 	return (
-		<div className={styles.codeContainer}>
-			<LindokeLogo />
-			<label htmlFor="roomCode">Código da sala</label>
-			<input
-				id="roomCode"
-				value={roomCode}
-				onChange={(e) => setRoomCode(e.currentTarget.value)}
-				placeholder="CODIGO"
-			/>
-			{validatedRoom && (
-				<Link href={`/sala/${roomCode}`}>
-					<a>Entrar!</a>
-				</Link>
-			)}
-			{loading && (
-				<div className={styles.loading}>
-					<span>Buscando sala...</span>
-				</div>
-			)}
+		<div className={styles.container}>
+			<Particles />
+			<div className={styles.codeContainer}>
+				<LindokeLogo />
+				<label htmlFor="roomCode">Código da sala</label>
+				<input
+					id="roomCode"
+					value={roomCode}
+					onChange={(e) => setRoomCode(e.currentTarget.value)}
+					placeholder="CODIGO"
+				/>
+				{validatedRoom && (
+					<Link href={`/sala/${roomCode}`}>
+						<a>Entrar!</a>
+					</Link>
+				)}
+				{loading && (
+					<div className={styles.loading}>
+						<span>Buscando sala...</span>
+					</div>
+				)}
+			</div>
 		</div>
 	);
 }

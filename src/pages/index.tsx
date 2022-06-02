@@ -11,6 +11,7 @@ import {
 } from '../context/songobookContext';
 import Start from '../components/Start';
 import RoomContainer from '../components/RoomContainer';
+import Particles from '../components/Particles';
 
 import styles from '../styles/Home.module.scss';
 
@@ -63,6 +64,7 @@ export default function Home() {
 				<meta name="description" content="Tão bonitos quanto cantores" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
+			<Particles />
 			{room?.songs.length && autoplayPermission ? <RoomContainer /> : <Start />}
 		</div>
 	);

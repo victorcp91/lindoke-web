@@ -25,6 +25,18 @@ export default function Home() {
 	const router = useRouter();
 	const { roomId } = router.query;
 
+	useEffect(() => {
+		if (typeof window) {
+			if (
+				!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+					navigator.userAgent
+				)
+			) {
+				router.push('/');
+			}
+		}
+	}, []);
+
 	const authUser = async () => {
 		const currentUser = await authAnonymousUser();
 		setUser(currentUser);

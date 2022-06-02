@@ -1,16 +1,22 @@
+.container {
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	background-color: var(--blue);
+	position: relative;
+}
 .codeContainer {
 	display: flex;
 	flex-direction: column;
 	padding: 20px;
 	justify-content: center;
 	align-items: center;
-	background-color: var(--blue);
 	color: var(--yellow);
 	width: 100vw;
 	height: 100vh;
-	width: 100vw;
-	height: 100vh;
 	font-size: 20px;
+	z-index: 2;
+	position: relative;
 	svg {
 		width: 90%;
 		margin-bottom: 20px;
