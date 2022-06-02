@@ -1,0 +1,33 @@
+:root {
+	--blue: #005f86;
+	--lightblue: #0274a3;
+	--yellow: #f6be00;
+	--easing: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+button {
+	cursor: pointer;
+}
+ul,
+li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}

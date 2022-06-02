@@ -1,0 +1,20 @@
+.singersContainer {
+	display: flex;
+	flex-direction: column;
+	overflow-y: scroll;
+	flex: 1;
+	justify-content: flex-start;
+	li {
+		margin: 5px;
+	}
+	button {
+		width: 100%;
+		padding: 15px;
+		background-color: rgba(246, 190, 0, 0.1);
+		color: var(--blue);
+		font-size: 18px;
+		font-weight: bold;
+		border: none;
+		text-transform: uppercase;
+	}
+}

@@ -1,0 +1,88 @@
+.main {
+	padding: 5rem 0;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	.logo {
+		animation: logoZoomAnimation 3s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+		width: 100vw;
+		max-width: 350px;
+		margin: 0 50px 50px 50px;
+
+		path {
+			stroke: rgb(91.763306%, 66.665649%, 0%);
+			fill-rule: nonzero;
+			fill: rgb(91.763306%, 66.665649%, 0%);
+			stroke-dasharray: 1000;
+			fill-opacity: 0;
+			animation: strokeAnimation 4s ease-in,
+				fillAnimation 1s ease-in 1s normal forwards;
+		}
+	}
+	.start {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #f6be00;
+		max-width: 700px;
+		width: 100%;
+		margin: 0 auto;
+		animation: zoomAnimation 3s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+		.help {
+			display: flex;
+			padding: 0 10px;
+			margin: 0 20px;
+			ul {
+				padding: 0;
+				margin: 0;
+				list-style: none;
+				li {
+					margin: 15px 0;
+				}
+			}
+		}
+	}
+	.openRoom {
+		border: none;
+		background-color: var(--yellow);
+		color: var(--blue);
+		font-weight: bold;
+		font-size: 24px;
+		padding: 10px;
+		margin-top: 20px;
+		&:hover {
+			filter: contrast(150%);
+		}
+	}
+}
+
+@keyframes strokeAnimation {
+	0% {
+		stroke-dashoffset: 1000;
+	}
+	100% {
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes logoZoomAnimation {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(1.1);
+	}
+}
+
+@keyframes fillAnimation {
+	0% {
+		fill-opacity: 0;
+		stroke-opacity: 1;
+	}
+	100% {
+		fill-opacity: 1;
+		stroke-opacity: 0;
+	}
+}

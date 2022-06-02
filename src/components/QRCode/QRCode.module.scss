@@ -1,0 +1,54 @@
+.qrContainer {
+	display: flex;
+	flex-direction: column;
+	// border-right: 2px solid #f6be00;
+	padding: 0 50px;
+	margin: 0 20px;
+	svg path[fill='#f6be00'] {
+		fill-rule: nonzero;
+		fill: rgb(91.763306%, 66.665649%, 0%);
+		stroke-dasharray: 1000;
+		fill-opacity: 0;
+		animation: zoomAnimation 0.5s ease-in normal forwards;
+		&:nth-child(2n) {
+			animation: fillAnimation 0.5s ease-in 0.3s normal forwards;
+		}
+		&:nth-child(2n + 1) {
+			animation: fillAnimation 0.5s ease-in 0.4s normal forwards;
+		}
+	}
+	svg path[fill='#005F86'] {
+		opacity: 0;
+	}
+	.code {
+		text-align: center;
+		margin: 10;
+	}
+	strong {
+		margin-top: 10px;
+		max-width: 256px;
+		text-align: center;
+		line-height: 1.4em;
+		font-size: 1.2em;
+	}
+}
+
+@keyframes zoomAnimation {
+	0% {
+		transform: scale(0.8);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes fillAnimation {
+	0% {
+		fill-opacity: 0;
+		stroke-opacity: 1;
+	}
+	100% {
+		fill-opacity: 1;
+		stroke-opacity: 0;
+	}
+}
